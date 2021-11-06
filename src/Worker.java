@@ -1,26 +1,35 @@
-public class Worker {
+public class Worker implements IEmployee {
 
     private String name;
-    static double baseSalary = 100;
-    private double salary;
+    private double baseSalary;
 
-    public Worker(String name) {
-        this.salary = baseSalary;
+    public Worker(String name, double baseSalary) {
         this.name = name;
-    }
-    public Worker(String name, int salary) {
-        this.name = name;
-        this.salary = salary;
+        this.baseSalary = baseSalary;
     }
 
+    @Override
+    public void setBaseSalary(int baseSalary) {
+        this.baseSalary = baseSalary;
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public double getBaseSalary() {
+        return this.baseSalary;
+    }
+
+    @Override
     public String getName() {
-        return name;
-    }
-    public final double getBaseSalary() {
-        return baseSalary;
+        return this.name;
     }
 
+    @Override
     public double getSalary() {
-        return salary;
+        return getBaseSalary();
     }
 }

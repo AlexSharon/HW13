@@ -1,5 +1,5 @@
 
-public final class Manager extends Worker {
+public final class Manager implements IEmployee {
     private int NumberOfSubordinates;
 
     private final double COEF = 9 * NumberOfSubordinates / 100.0;
@@ -11,22 +11,20 @@ public final class Manager extends Worker {
         this.NumberOfSubordinates = numberOfSubordinates;
     }
 
-    @Override
     public double getSalary() {
 
         if (NumberOfSubordinates == 0) {
-            return super.getBaseSalary();
+            return getBaseSalary();
         } else {
-            return baseSalary + (baseSalary * COEF);
+            return getBaseSalary() + (getBaseSalary() * COEF);
         }
-
     }
 
     public Manager(String name) {
-        super(name);
+        setName(name);
     }
     public Manager(String name, int NumberOfSubordinates) {
-        super(name);
+        setName(name);
         this.NumberOfSubordinates = NumberOfSubordinates;
     }
 }

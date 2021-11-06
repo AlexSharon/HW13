@@ -12,7 +12,7 @@ public class Main {
         Manager boss2 = new Manager("Karl", 10);
         Manager boss3 = new Manager("Pit", 45);
 
-        Worker[] array_w = {first, second, boss1, boss2};
+        Worker[] array_w = {first, second};
         Manager[] array_m = {boss1, boss2, boss3};
 
         System.out.println(UtilsW.maxAddition(array_m).getName());
